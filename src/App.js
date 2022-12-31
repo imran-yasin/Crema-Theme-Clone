@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Creama from "./Components/Creama";
+import Home from "./Components/Home";
+import Layouts from "./Components/Layouts";
+import Apps from "./Components/Apps";
+import Customization from "./Components/Customization";
+import Features from "./Components/Features";
+import Document from "./Components/Document";
+import { Routes, Route } from "react-router-dom";
+import Nav from "./Components/Nav";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <Creama />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/layouts" element={<Layouts />} />
+        <Route path="/apps" element={<Apps />} />
+        <Route path="/customization" element={<Customization />} />
+        <Route path="/features" element={<Features />} />
+        <Route path="/doc" element={<Document />} />
+      </Routes>
     </div>
   );
 }
